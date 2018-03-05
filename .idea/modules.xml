@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Agenda/Agenda.iml" filepath="$PROJECT_DIR$/Agenda/Agenda.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Escola.iml" filepath="$PROJECT_DIR$/.idea/Escola.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Agenda/qwerty.iml" filepath="$PROJECT_DIR$/Agenda/qwerty.iml" />
-      <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
     </modules>
   </component>
 </project>

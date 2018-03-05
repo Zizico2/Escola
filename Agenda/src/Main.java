@@ -32,6 +32,7 @@ public class Main {
     private static final String DUPLICATE_PHONE_EXIST = "There are contacts that share phone numbers.";
     private static final String BOOK_EMPTY = "Contact book empty.";
 
+    //Interpretador de Comandos
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         ContactBook cBook = new ContactBook();
@@ -77,6 +78,7 @@ public class Main {
         in.close();
     }
 
+    //Leitor de Comandos
     private static String getCommand(Scanner in) {
         String input;
 
@@ -84,6 +86,8 @@ public class Main {
         return input;
     }
 
+
+    //Adicionar Contacto
     private static void addContact(Scanner in, ContactBook cBook) {
         String name, email;
         int phone;
@@ -98,6 +102,7 @@ public class Main {
         } else System.out.println(CONTACT_EXISTS);
     }
 
+    //Remover Contacto
     private static void deleteContact(Scanner in, ContactBook cBook) {
         String name;
         name = in.nextLine();
