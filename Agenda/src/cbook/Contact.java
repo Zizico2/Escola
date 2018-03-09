@@ -5,7 +5,7 @@ package cbook;
  * 		@author Bernardo Borda d'Agua
  */
 
-public class Contact {
+public class Contact implements ContactInterface {
     private String name;
     private int phone;
     private String email;

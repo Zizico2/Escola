@@ -5,8 +5,7 @@ package cbook;
  * 		@author Bernardo Borda d'Agua
  */
 
-public class ContactBook {
-    static final int DEFAULT_SIZE = 100;
+public class ContactBook implements ContactBookInterface {
 
     private int counter;
     private Contact[] contacts;
