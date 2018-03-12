@@ -46,7 +46,7 @@ public class SocialNetworkClass implements SocialNetwork{
     }
 
     public int friend(String name1, String name2){
-
+        return 2;
     }
 
     public People checkFriendList(String name){
