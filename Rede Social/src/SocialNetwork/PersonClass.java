@@ -11,7 +11,7 @@ public class PersonClass implements Person {
         FL = new FriendListClass();
     }
 
-    void removeFriend(String name){
+    public void removeFriend(String name){
         FL.initializeIterator();
 
         while(FL.hasNext()){
@@ -20,7 +20,9 @@ public class PersonClass implements Person {
         }
     }
 
-    void addFriend(Person friend);
+    public void addFriend(Person friend){
+
+    }
 
     public String getName(){
         return name;
