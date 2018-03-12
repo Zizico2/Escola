@@ -25,11 +25,17 @@ public class Main {
         while(cmd.equals(EXIT)) {
             cmd = in.nextLine().toLowerCase();
             switch(cmd){
-                case CHECK_PERSON:break;
+                case CHECK_PERSON:
+                    checkPerson(SN, in);
+                    break;
 
-                case REGISTER:break;
+                case REGISTER:
+                    register(SN, in);
+                    break;
 
-                case CHECK_FRIENDSHIP:break;
+                case CHECK_FRIENDSHIP:
+                    checkFriendship(SN, in);
+                    break;
 
                 case FRIENDS: break;
 
@@ -47,4 +53,42 @@ public class Main {
             }
         }
     }
+
+    private static void checkPerson(SocialNetwork SN, Scanner in){
+        String name = in.nextLine();
+        if (SN.checkPerson(name))
+            System.out.println("Pessoa registada.");
+        else
+            System.out.println("Sem registo.");
+    }
+
+    private static void register(SocialNetwork SN, Scanner in){
+        if (SN.register(in.nextLine(), in.nextLine(), in.nextLine()))
+            System.out.println("Pessoa registada com sucesso.");
+        else
+            System.out.println("Pessoa registada.");
+    }
+
+    private static void checkFriendship(SocialNetwork SN, Scanner in){
+        if (SN.checkFriendship(in.nextLine(), in.nextLine()))
+            System.out.println("Amizade existente.");
+        else
+            System.out.println("Amizade inexistente.");
+    }
+
+    private static void friends(SocialNetwork SN, Scanner in) {
+        switch (SN.friend(in.nextLine(), in.nextLine())) {
+            case SocialNetwork.SUCCESSEFUL_FRIENSHIP:
+                System.out.println("Amizade criada.");
+                break;
+
+            case SocialNetwork.FRIENDSHIP_ALREADY_EXISTS:
+                System.out.println("Amizade existente");
+                break;
+
+            case SocialNetwork.INVALID_FRIENDSHIP:
+                System.out.println("Amizade invalida.");
+        }
+    }
+
 }

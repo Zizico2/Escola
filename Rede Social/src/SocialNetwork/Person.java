@@ -1,15 +1,16 @@
 package SocialNetwork;
 
-public interface Person {
+    public interface Person {
 
-    void removeFriend(String name);
+        void removeFriend(String name);
 
-    void addFriend(Person friend);
+        void addFriend(Person friend);
 
-    String getName();
+        String getName();
 
-    String getStatus();
+        String getStatus();
 
-    void setStatus(String status);
+        void setStatus(String status);
 
+        boolean checkFriend(String name);
 }
