@@ -95,9 +95,10 @@
       <file leaf-file-name="PersonClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SocialNetwork/PersonClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+            <state relative-caret-position="544">
+              <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
               <folding>
+                <element signature="e#676#677#0" expanded="true" />
                 <element signature="e#703#704#0" expanded="true" />
                 <element signature="e#735#736#0" expanded="true" />
                 <element signature="e#764#765#0" expanded="true" />
@@ -311,12 +312,12 @@
       <option name="presentableId" value="Default" />
       <updated>1520865256283</updated>
       <workItem from="1520865261009" duration="5177000" />
-      <workItem from="1520879310794" duration="895000" />
+      <workItem from="1520879310794" duration="918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6072000" />
+    <option name="totallyTimeSpent" value="6095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -435,6 +436,7 @@
         <state relative-caret-position="119">
           <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding>
+            <element signature="e#676#677#0" expanded="true" />
             <element signature="e#703#704#0" expanded="true" />
             <element signature="e#735#736#0" expanded="true" />
             <element signature="e#764#765#0" expanded="true" />
@@ -574,9 +576,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SocialNetwork/PersonClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        <state relative-caret-position="544">
+          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
           <folding>
+            <element signature="e#676#677#0" expanded="true" />
             <element signature="e#703#704#0" expanded="true" />
             <element signature="e#735#736#0" expanded="true" />
             <element signature="e#764#765#0" expanded="true" />
