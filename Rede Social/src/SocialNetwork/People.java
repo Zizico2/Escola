@@ -8,8 +8,6 @@ public interface People {
 
     void addPerson(Person friend);
 
-
-
     void initializeIterator();
 
     boolean hasNext();

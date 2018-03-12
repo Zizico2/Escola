@@ -10,8 +10,8 @@ public class PeopleClass implements People{
         counter = -1;
     }
 
-    public void addPerson(Person ){
-        people[counter++] = friend;
+    public void addPerson(Person  person){
+        people[counter++] = person;
     }
 
     public void removePerson(){
