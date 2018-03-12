@@ -12,4 +12,6 @@ public interface FriendList {
 
     //Pre: hasNext();
     Person next();
+
+    void removeFriend();
 }

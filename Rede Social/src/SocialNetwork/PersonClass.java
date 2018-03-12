@@ -13,11 +13,12 @@ public class PersonClass implements Person {
 
     public void removeFriend(String name){
         FL.initializeIterator();
-
-        while(FL.hasNext()){
+        boolean aux = false;
+        while(FL.hasNext() && !aux){
             if(FL.next().getName().equals(name))
-
-        }
+                FL.removeFriend();
+            aux = true;
+            }
     }
 
     public void addFriend(Person friend){

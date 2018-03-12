@@ -14,6 +14,12 @@ public class FriendListClass implements FriendList {
         friendList[counter++] = friend;
     }
 
+    public void removeFriend(){
+        for (int i = current; i < counter; i++){
+            friendList[i] = friendList[i + 1];
+        }
+    }
+
     public void initializeIterator(){
         current = 0;
     }
