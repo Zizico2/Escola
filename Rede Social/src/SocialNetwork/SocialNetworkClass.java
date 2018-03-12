@@ -2,27 +2,54 @@ package SocialNetwork;
 
 public class SocialNetworkClass implements SocialNetwork{
 
-    public SocialNetworkClass(){
+    People users;
 
+    public SocialNetworkClass(){
+        users = new PeopleClass(People.SOCIAL_NETWORK_SIZE);
     }
 
     public boolean checkPerson(String name){
-        return false;
+        boolean found = false;
+        users.initializeIterator();
+        while (users.hasNext() || !found)
+            found = users.next().getName().equals(name);
+        return found;
     }
 
-    public void register(String name, String email, String status){
+    public boolean register(String name, String email, String status){
+        boolean aux = true;
+        Person jonhdoe;
 
+        if (!checkPerson(name)) {
+            jonhdoe = new PersonClass(name, email, status);
+            users.addPerson(jonhdoe);
+        }
+        else
+            aux = false;
+        return aux;
     }
 
     public boolean checkFriendship(String name1, String name2){
-        return false;
+        boolean found = false;
+        boolean found2 = false;
+        users.initializeIterator();
+        Person jonhdoe = null;
+        while(users.hasNext() || !found) {
+            jonhdoe = users.next();
+            if (jonhdoe.getName().equals(name1)) {
+                found2 = jonhdoe.checkFriend(name2);
+                found = true;
+            }
+        }
+
+        return found2;
     }
 
-    public void friend(String name1, String name2){
+    public int friend(String name1, String name2){
 
     }
 
-    public FriendList checkFriendList(String name){
+    public People checkFriendList(String name){
         return null;
     }
 

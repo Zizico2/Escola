@@ -2,25 +2,28 @@ package SocialNetwork;
 
 public class PersonClass implements Person {
     private String status,name,email;
-    private FriendList FL;
+    private People friendList;
 
     public PersonClass(String name, String email, String status){
         this.status = status;
         this.email = email;
         this.name = name;
-        FL = new FriendListClass();
+        friendList = new PeopleClass(People.FRIEND_LIST_SIZE);
     }
 
-    void removeFriend(String name){
-        FL.initializeIterator();
-
-        while(FL.hasNext()){
-            if(FL.next().getName().equals(name))
-
-        }
+    public void removeFriend(String name){
+        friendList.initializeIterator();
+        boolean aux = false;
+        while(friendList.hasNext() || !aux){
+            if(friendList.next().getName().equals(name))
+                friendList.removePerson();
+            aux = true;
+            }
     }
 
-    void addFriend(Person friend);
+    public void addFriend(Person friend){
+
+    }
 
     public String getName(){
         return name;
@@ -32,5 +35,14 @@ public class PersonClass implements Person {
 
     public void setStatus(String status){
         this.status = status;
+    }
+
+    public boolean checkFriend(String name){
+        friendList.initializeIterator();
+        boolean found = false;
+        while(friendList.hasNext() || !found){
+            found = friendList.next().getName().equals(name);
+        }
+        return found;
     }
 }
