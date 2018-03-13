@@ -14,6 +14,4 @@ public interface People {
 
     //Pre: hasNext();
     Person next();
-
-    void removePerson();
 }

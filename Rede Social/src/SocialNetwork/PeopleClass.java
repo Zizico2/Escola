@@ -6,21 +6,12 @@ public class PeopleClass implements People{
 
     public PeopleClass(int size){
         people = new Person[size];
-
         counter = -1;
     }
 
     @Override
     public void addPerson(Person  person){
         people[counter++] = person;
-    }
-
-    @Override
-    public void removePerson(){
-        for (int i = current; i < counter; i++){
-            people[i] = people[i + 1];
-        }
-        counter--;
     }
 
     @Override

@@ -45,11 +45,17 @@ public class Main {
                     checkFriendList(SN, in);
                     break;
 
-                case NEW_STATUS:break;
+                case NEW_STATUS:
+                    newStatus(SN, in);
+                    break;
 
-                case CHECK_STATUS:break;
+                case CHECK_STATUS:
+                    checkStatus(SN, in);
+                    break;
 
-                case PEOPLE: break;
+                case PEOPLE:
+                    people(SN);
+                    break;
 
                 case EXIT: break;
 
@@ -81,7 +87,9 @@ public class Main {
     }
 
     private static void friends(SocialNetwork SN, Scanner in) {
-        switch (SN.friend(in.nextLine(), in.nextLine())) {
+       String name1 = in.nextLine();
+       String name2 = in.nextLine();
+        switch (SN.friend(name1, name2)){
 
             case SocialNetwork.NO_REGISTRY:
                 System.out.println("Sem registo.");
@@ -96,22 +104,60 @@ public class Main {
                 break;
 
             case SocialNetwork.SUCCESSFUL_FRIENDSHIP:
+                SN.friend(name1, name2);
                 System.out.println("Amizade criada.");
         }
     }
 
     private static void checkFriendList(SocialNetwork SN, Scanner in){
-        People friendList = SN.checkFriendList(in.nextLine());
-        friendList.initializeIterator();
-        if(friendList == null)
+        People friendList;
+        String name = in.nextLine();
+        if(SN.checkPerson(name))
             System.out.println("Sem registo.");
-        else if(!friendList.hasNext())
-            System.out.println("Nao tem amigos registados.");
+        else {
+            friendList = SN.checkFriendList(name);
+            friendList.initializeIterator();
+            if (!friendList.hasNext())
+                System.out.println("Nao tem amigos registados.");
+            else{
+                 System.out.println("Lista de amigos:");
+                 while(friendList.hasNext()) {
+                   Person friend = friendList.next();
+                   System.out.println(friend.getName() + "; " + friend.getEmail());
+                }
+            }
+        }
+    }
+
+    private static void newStatus(SocialNetwork SN, Scanner in){
+        String name = in.nextLine();
+        String status =  in.nextLine();
+        if(SN.checkPerson(name))
+            System.out.println("Sem registo.");
+        else {
+            SN.changeStatus(name, status);
+            System.out.println("Estado alterado.");
+        }
+    }
+
+    private static void checkStatus(SocialNetwork SN, Scanner in){
+       String name = in.nextLine();
+        if(!SN.checkPerson(name))
+            System.out.println("Sem registo.");
+        else
+            System.out.println(SN.checkStatus(name));
+    }
+
+    private static void people(SocialNetwork SN){
+        People users = SN.getUsers();
+        users.initializeIterator();
+        if(!users.hasNext())
+            System.out.println("Rede social vazia.");
         else{
-            System.out.println("Lista de amigos:");
-            while(friendList.hasNext()){
-                Person friend = friendList.next();
-                System.out.println(friend.getName() + "; " + friend.getEmail());
+            System.out.println("Lista de pessoas registadas:");
+            while(users.hasNext()) {
+                Person jonhdoe = users.next();
+                System.out.println(jonhdoe.getName() + "; " + jonhdoe.getEmail());
             }
         }
     }

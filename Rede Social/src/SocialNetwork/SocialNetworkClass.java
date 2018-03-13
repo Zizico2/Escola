@@ -1,6 +1,5 @@
 package SocialNetwork;
 
-
 public class SocialNetworkClass implements SocialNetwork{
 
     private People users;
@@ -37,7 +36,7 @@ public class SocialNetworkClass implements SocialNetwork{
         boolean found = false;
         boolean found2 = false;
         users.initializeIterator();
-        Person jonhdoe = null;
+        Person jonhdoe;
         while(users.hasNext() || !found) {
             jonhdoe = users.next();
             if (jonhdoe.getName().equals(name1)) {
@@ -65,28 +64,49 @@ public class SocialNetworkClass implements SocialNetwork{
 
     @Override
     public People checkFriendList(String name){
-        Person user = null;
-        People friendlist = null ;
+        Person jonhdoe;
+        People friendlist = null;
         boolean found = false;
         users.initializeIterator();
         while(users.hasNext() && !found){
-            user =  users.next();
-            if(user.getName().equals(name)){
+            jonhdoe =  users.next();
+            if(jonhdoe.getName().equals(name)){
                 found = true;
-                friendlist = user.getFriendList();
+                friendlist = jonhdoe.getFriendList();
             }
         }
         return friendlist;
     }
 
     @Override
-    public void changeStatus(String name){
-
+    public void changeStatus(String name,String status){
+        Person jonhdoe;
+        users.initializeIterator();
+        boolean found = false;
+        while(users.hasNext() && !found){
+            jonhdoe = users.next();
+            if(jonhdoe.getName().equals(name)){
+                found = true;
+                jonhdoe.setStatus(status);
+            }
+        }
     }
 
     @Override
     public String checkStatus(String name){
-        return null;
+        Person jonhdoe;
+        String status = "";
+        users.initializeIterator();
+        while(users.hasNext()){
+            jonhdoe =  users.next();
+            if(jonhdoe.getName().equals(name))
+                status = jonhdoe.getStatus();
+        }
+        return status;
     }
 
+    @Override
+    public People getUsers() {
+        return users;
+    }
 }

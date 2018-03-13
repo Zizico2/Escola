@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Tiago Kebas">
     <words>
+      <w>alterado</w>
       <w>amizade</w>
       <w>comando</w>
       <w>consultaamigos</w>
@@ -8,6 +9,7 @@
       <w>consultaestado</w>
       <w>consultapessoa</w>
       <w>criada</w>
+      <w>estado</w>
       <w>existente</w>
       <w>friendlist</w>
       <w>inexistente</w>
@@ -15,11 +17,17 @@
       <w>jonhdoe</w>
       <w>lista</w>
       <w>novoestado</w>
+      <w>pessoa</w>
       <w>pessoas</w>
+      <w>rede</w>
       <w>regista</w>
+      <w>registada</w>
+      <w>registadas</w>
       <w>registados</w>
       <w>registo</w>
       <w>sair</w>
+      <w>sucesso</w>
+      <w>vazia</w>
     </words>
   </dictionary>
 </component>

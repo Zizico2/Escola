@@ -17,8 +17,10 @@ public interface SocialNetwork {
 
     People checkFriendList(String name);
 
-    void changeStatus(String name);
+    void changeStatus(String name, String status);
 
     String checkStatus(String name);
+
+    People getUsers();
 
 }
