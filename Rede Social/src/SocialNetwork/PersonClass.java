@@ -11,38 +11,37 @@ public class PersonClass implements Person {
         friendList = new PeopleClass(People.FRIEND_LIST_SIZE);
     }
 
-    public void removeFriend(String name){
-        friendList.initializeIterator();
-        boolean aux = false;
-        while(friendList.hasNext() || !aux){
-            if(friendList.next().getName().equals(name))
-                friendList.removePerson();
-            aux = true;
-            }
-    }
-
+    @Override
     public void addFriend(Person friend){
-
+        friendList.addPerson(friend);
     }
 
+    @Override
     public String getName(){
         return name;
     }
 
+    @Override
     public String getStatus(){
         return status;
     }
 
+    @Override
     public void setStatus(String status){
         this.status = status;
     }
 
+    @Override
     public boolean checkFriend(String name){
         friendList.initializeIterator();
         boolean found = false;
-        while(friendList.hasNext() || !found){
+        while(friendList.hasNext() && !found){
             found = friendList.next().getName().equals(name);
         }
         return found;
+    }
+    @Override
+    public People getFriendList(){
+        return friendList;
     }
 }

@@ -2,6 +2,11 @@ package SocialNetwork;
 
 public interface SocialNetwork {
 
+    int SUCCESSFUL_FRIENDSHIP = 0;
+    int NO_REGISTRY = 1;
+    int FRIENDSHIP_ALREADY_EXISTS = 2;
+    int INVALID_FRIENDSHIP = 3;
+
     boolean checkPerson(String name);
 
     boolean register(String name, String email, String status);

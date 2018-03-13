@@ -2,8 +2,6 @@ package SocialNetwork;
 
     public interface Person {
 
-        void removeFriend(String name);
-
         void addFriend(Person friend);
 
         String getName();
@@ -13,4 +11,6 @@ package SocialNetwork;
         void setStatus(String status);
 
         boolean checkFriend(String name);
+
+        People getFriendList();
 }

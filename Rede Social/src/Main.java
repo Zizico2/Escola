@@ -37,7 +37,9 @@ public class Main {
                     checkFriendship(SN, in);
                     break;
 
-                case FRIENDS: break;
+                case FRIENDS:
+                    friends(SN, in);
+                    break;
 
                 case CHECK_FRIEND_LIST:break;
 
@@ -47,7 +49,7 @@ public class Main {
 
                 case PEOPLE: break;
 
-                case EXIT:;
+                case EXIT: break;
 
                 default:System.out.println(UNKNOWN_COMMAND);
             }
@@ -78,17 +80,21 @@ public class Main {
 
     private static void friends(SocialNetwork SN, Scanner in) {
         switch (SN.friend(in.nextLine(), in.nextLine())) {
-            case SocialNetwork.SUCCESSEFUL_FRIENSHIP:
-                System.out.println("Amizade criada.");
+
+            case SocialNetwork.NO_REGISTRY:
+                System.out.println("Sem registo.");
+                break;
+
+            case SocialNetwork.INVALID_FRIENDSHIP:
+                System.out.println("Amizade invalida.");
                 break;
 
             case SocialNetwork.FRIENDSHIP_ALREADY_EXISTS:
                 System.out.println("Amizade existente");
                 break;
 
-            case SocialNetwork.INVALID_FRIENDSHIP:
-                System.out.println("Amizade invalida.");
+            case SocialNetwork.SUCCESSFUL_FRIENDSHIP:
+                System.out.println("Amizade criada.");
         }
     }
-
 }

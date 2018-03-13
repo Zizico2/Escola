@@ -1,21 +1,24 @@
 package SocialNetwork;
 
+
 public class SocialNetworkClass implements SocialNetwork{
 
-    People users;
+    private People users;
 
     public SocialNetworkClass(){
         users = new PeopleClass(People.SOCIAL_NETWORK_SIZE);
     }
 
+    @Override
     public boolean checkPerson(String name){
         boolean found = false;
         users.initializeIterator();
-        while (users.hasNext() || !found)
+        while (users.hasNext() && !found)
             found = users.next().getName().equals(name);
         return found;
     }
 
+    @Override
     public boolean register(String name, String email, String status){
         boolean aux = true;
         Person jonhdoe;
@@ -29,6 +32,7 @@ public class SocialNetworkClass implements SocialNetwork{
         return aux;
     }
 
+    @Override
     public boolean checkFriendship(String name1, String name2){
         boolean found = false;
         boolean found2 = false;
@@ -45,18 +49,42 @@ public class SocialNetworkClass implements SocialNetwork{
         return found2;
     }
 
+    @Override
     public int friend(String name1, String name2){
-        return 2;
+        int res;
+        if(checkPerson(name1) || checkPerson(name2))
+            res = NO_REGISTRY;
+        else if(checkFriendship(name1,name2))
+            res = FRIENDSHIP_ALREADY_EXISTS;
+        else if (name1.equals(name2))
+            res = INVALID_FRIENDSHIP;
+        else
+            res = SUCCESSFUL_FRIENDSHIP;
+        return res;
     }
 
+    @Override
     public People checkFriendList(String name){
-        return null;
+        Person user = null;
+        People friendlist = null ;
+        boolean found = false;
+        users.initializeIterator();
+        while(users.hasNext() && !found){
+            user =  users.next();
+            if(user.getName().equals(name)){
+                found = true;
+                friendlist = user.getFriendList();
+            }
+        }
+        return friendlist;
     }
 
+    @Override
     public void changeStatus(String name){
 
     }
 
+    @Override
     public String checkStatus(String name){
         return null;
     }
