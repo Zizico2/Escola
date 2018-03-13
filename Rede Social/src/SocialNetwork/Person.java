@@ -8,6 +8,8 @@ package SocialNetwork;
 
         String getStatus();
 
+        String getEmail();
+
         void setStatus(String status);
 
         boolean checkFriend(String name);

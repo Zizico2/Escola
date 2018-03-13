@@ -27,6 +27,10 @@ public class PersonClass implements Person {
     }
 
     @Override
+    public String getEmail(){
+        return email;
+    }
+    @Override
     public void setStatus(String status){
         this.status = status;
     }

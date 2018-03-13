@@ -41,7 +41,9 @@ public class Main {
                     friends(SN, in);
                     break;
 
-                case CHECK_FRIEND_LIST:break;
+                case CHECK_FRIEND_LIST:
+                    checkFriendList(SN, in);
+                    break;
 
                 case NEW_STATUS:break;
 
@@ -95,6 +97,22 @@ public class Main {
 
             case SocialNetwork.SUCCESSFUL_FRIENDSHIP:
                 System.out.println("Amizade criada.");
+        }
+    }
+
+    private static void checkFriendList(SocialNetwork SN, Scanner in){
+        People friendList = SN.checkFriendList(in.nextLine());
+        friendList.initializeIterator();
+        if(friendList == null)
+            System.out.println("Sem registo.");
+        else if(!friendList.hasNext())
+            System.out.println("Nao tem amigos registados.");
+        else{
+            System.out.println("Lista de amigos:");
+            while(friendList.hasNext()){
+                Person friend = friendList.next();
+                System.out.println(friend.getName() + "; " + friend.getEmail());
+            }
         }
     }
 }
