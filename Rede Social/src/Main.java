@@ -16,7 +16,7 @@ public class Main {
 
     private static final String END_MSG = "Adeus." + "\n" + "\n";
     private static final String PERSON_REGISTERED = "Pessoa registada.";
-    private static final String NO_REGISTRY = "Pessoa registada.";
+    private static final String NO_REGISTRY = "Sem registo.";
     private static final String SUCCESSFUL_REGISTRY = "Pessoa registada com sucesso.";
     private static final String FRIENDSHIP_NON_EXISTENT = "Amizade inexistente.";
     private static final String FRIENDSHIP_EXISTS = "Amizade existente.";
