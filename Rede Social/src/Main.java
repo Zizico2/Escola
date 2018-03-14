@@ -87,10 +87,10 @@ public class Main {
 
     private static void checkPerson(SocialNetwork SN, Scanner in){
         String name = in.nextLine();
-        if (SN.checkPerson(name))
-            System.out.println();
-        else
+        if (!SN.checkPerson(name))
             System.out.println(NO_REGISTRY);
+        else
+            System.out.println(PERSON_REGISTERED);
     }
 
     private static void register(SocialNetwork SN, Scanner in){
