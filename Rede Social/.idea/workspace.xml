@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bff9e9d-9777-4434-9262-3423669f6b48" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/SocialNetwork/SocialNetworkClass.java" afterPath="$PROJECT_DIR$/src/SocialNetwork/SocialNetworkClass.java" />
-    </list>
+    <list default="true" id="1bff9e9d-9777-4434-9262-3423669f6b48" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -293,12 +291,12 @@
       <workItem from="1521028703187" duration="406000" />
       <workItem from="1521029133012" duration="20000" />
       <workItem from="1521029177028" duration="2550000" />
-      <workItem from="1521039233384" duration="3219000" />
+      <workItem from="1521039233384" duration="3349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6195000" />
+    <option name="totallyTimeSpent" value="6325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
