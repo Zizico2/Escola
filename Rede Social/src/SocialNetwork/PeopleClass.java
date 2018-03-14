@@ -1,9 +1,12 @@
 package SocialNetwork;
 
 public class PeopleClass implements People{
+
+//        VARIAVEIS
     private Person[] people;
     private int counter,current;
 
+//     CONSTRUTOR
     public PeopleClass(int size){
         people = new Person[size];
         counter = 0;

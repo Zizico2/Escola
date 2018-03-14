@@ -2,8 +2,10 @@ package SocialNetwork;
 
 public class SocialNetworkClass implements SocialNetwork{
 
+    // VARIAVEIS
     private People users;
 
+    // CONSTRUTOR
     public SocialNetworkClass(){
         users = new PeopleClass(People.SOCIAL_NETWORK_SIZE);
     }
@@ -120,6 +122,11 @@ public class SocialNetworkClass implements SocialNetwork{
         return users;
     }
 
+    /*
+      Retorna o utilizador com o mesmo nome que o do argumento, se nao existir retorna null.
+      @returns -
+                 Person jonhdoe
+     */
     private Person getPerson(String name){
        Person jonhdoe =  null;
        boolean found = false;

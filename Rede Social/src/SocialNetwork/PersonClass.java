@@ -1,9 +1,12 @@
 package SocialNetwork;
 
 public class PersonClass implements Person {
+
+//    VARIAVEIS
     private String status,name,email;
     private People friendList;
 
+//    CONSTRUTOR
     public PersonClass(String name, String email, String status){
         this.status = status;
         this.email = email;
@@ -30,6 +33,7 @@ public class PersonClass implements Person {
     public String getEmail(){
         return email;
     }
+
     @Override
     public void setStatus(String status){
         this.status = status;
@@ -44,6 +48,7 @@ public class PersonClass implements Person {
         }
         return found;
     }
+
     @Override
     public People getFriendList(){
         return friendList;

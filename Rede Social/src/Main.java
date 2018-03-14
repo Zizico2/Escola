@@ -3,6 +3,7 @@ import SocialNetwork.*;
 
 public class Main {
 
+    // Constantes para o interpretador
     private static final String EXIT = "SAIR";
     private static final String CHECK_PERSON = "CONSULTAPESSOA";
     private static final String REGISTER= "REGISTA";
@@ -14,6 +15,7 @@ public class Main {
     private static final String PEOPLE = "PESSOAS";
     private static final String UNKNOWN_COMMAND = "Comando inexistente!";
 
+    // Constantes para os metodos privados da main
     private static final String END_MSG = "Adeus." + "\n" + "\n";
     private static final String PERSON_REGISTERED = "Pessoa registada.";
     private static final String NO_REGISTRY = "Sem registo.";
@@ -30,6 +32,7 @@ public class Main {
     private static final int SN_MSG = 0;
     private static final int FL_MSG = 1;
 
+    // Metodo main
     public static void main(String args[]){
         Scanner input =  new Scanner(System.in);
         SocialNetwork SN = new SocialNetworkClass();
@@ -37,6 +40,7 @@ public class Main {
         input.close();
     }
 
+    // Interpretador de commandos
     private static void executeCommand(Scanner in, SocialNetwork SN){
         String cmd = "";
         while(!cmd.equals(EXIT)) {
@@ -85,6 +89,7 @@ public class Main {
         }
     }
 
+    // Verifica se a pessoa existe e escreve na consola a mensagem respetiva.
     private static void checkPerson(SocialNetwork SN, Scanner in){
         String name = in.nextLine();
         if (!SN.checkPerson(name))
@@ -93,6 +98,7 @@ public class Main {
             System.out.println(PERSON_REGISTERED);
     }
 
+    // Tenta registar uma pessoa, recebe o resultado e escreve na consola a mensagem respetiva.
     private static void register(SocialNetwork SN, Scanner in){
         if (SN.register(in.nextLine(), in.nextLine(), in.nextLine()))
             System.out.println(SUCCESSFUL_REGISTRY);
@@ -100,6 +106,7 @@ public class Main {
             System.out.println(PERSON_REGISTERED);
     }
 
+    // Verifica se existe amizade entre duas pessoas na rede social e escreve a mensagem respetiva na consola.
     private static void checkFriendship(SocialNetwork SN, Scanner in){
         if (SN.checkFriendship(in.nextLine(), in.nextLine()))
             System.out.println(FRIENDSHIP_EXISTS);
@@ -107,6 +114,7 @@ public class Main {
             System.out.println(FRIENDSHIP_NON_EXISTENT);
     }
 
+    // Tenta criar uma amizade entre duas pessoas recebe o resultado e escreve na consola a mensagem respetiva.
     private static void friends(SocialNetwork SN, Scanner in) {
        String name1 = in.nextLine();
        String name2 = in.nextLine();
@@ -130,6 +138,7 @@ public class Main {
         }
     }
 
+    // Verifica se existe a pessoa, se sim escreve a sua lista de amigos, se nao escreve a mensagem respetiva na consola
     private static void checkFriendList(SocialNetwork SN, Scanner in){
         People friendList;
         String name = in.nextLine();
@@ -142,6 +151,7 @@ public class Main {
         }
     }
 
+    // Verifica se existe a pessoa, se sim atualiza o seu estado, se nao escreve a mensagem respetiva na consola.
     private static void newStatus(SocialNetwork SN, Scanner in){
         String name = in.nextLine();
         String status =  in.nextLine();
@@ -153,6 +163,7 @@ public class Main {
         }
     }
 
+    // Verifica se a pessoa existe, se sim escreve o seu estado, se nao escreve a mensagem respetiva na consola.
     private static void checkStatus(SocialNetwork SN, Scanner in){
        String name = in.nextLine();
         if(!SN.checkPerson(name))
@@ -161,11 +172,15 @@ public class Main {
             System.out.println(SN.checkStatus(name));
     }
 
+    // Escreve na consola os utilizadores da rede social na consola
     private static void people(SocialNetwork SN){
         People users = SN.getUsers();
         users.initializeIterator();
         listPeople(users, SN_MSG);
     }
+
+    // Recebe o objeto People e o tipo de lista, escrevendo a mensagem respetiva em caso de lista vazia ou
+    // escreve a lista na consola.
     private static void listPeople(People people, int type){
         if(!people.hasNext()) {
             if(type == SN_MSG)
