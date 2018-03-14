@@ -3,27 +3,28 @@ import SocialNetwork.*;
 
 public class Main {
 
-    private static final String EXIT = "sair";
-    private static final String CHECK_PERSON = "consultapessoa";
-    private static final String REGISTER= "regista";
-    private static final String CHECK_FRIENDSHIP = "consultaamizade";
-    private static final String FRIENDS = "amigos";
-    private static final String CHECK_FRIEND_LIST = "consultaamigos";
-    private static final String NEW_STATUS = "novoestado";
-    private static final String CHECK_STATUS = "consultaestado";
-    private static final String PEOPLE = "pessoas";
+    private static final String EXIT = "SAIR";
+    private static final String CHECK_PERSON = "CONSULTAPESSOA";
+    private static final String REGISTER= "REGISTA";
+    private static final String CHECK_FRIENDSHIP = "CONSULTAAMIZADE";
+    private static final String FRIENDS = "AMIGOS";
+    private static final String CHECK_FRIEND_LIST = "CONSULTAAMIGOS";
+    private static final String NEW_STATUS = "NOVOESTADO";
+    private static final String CHECK_STATUS = "CONSULTAESTADO";
+    private static final String PEOPLE = "PESSOAS";
     private static final String UNKNOWN_COMMAND = "Comando inexistente!";
 
     public static void main(String args[]){
         Scanner input =  new Scanner(System.in);
         SocialNetwork SN = new SocialNetworkClass();
         executeCommand(input,SN);
+        input.close();
     }
 
     private static void executeCommand(Scanner in, SocialNetwork SN){
         String cmd = "";
-        while(cmd.equals(EXIT)) {
-            cmd = in.nextLine().toLowerCase();
+        while(!cmd.equals(EXIT)) {
+            cmd = in.nextLine().toUpperCase();
             switch(cmd){
                 case CHECK_PERSON:
                     checkPerson(SN, in);
@@ -61,6 +62,7 @@ public class Main {
 
                 default:System.out.println(UNKNOWN_COMMAND);
             }
+            System.out.println("");
         }
     }
 

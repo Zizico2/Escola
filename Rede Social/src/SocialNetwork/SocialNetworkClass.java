@@ -37,7 +37,7 @@ public class SocialNetworkClass implements SocialNetwork{
         boolean found2 = false;
         users.initializeIterator();
         Person jonhdoe;
-        while(users.hasNext() || !found) {
+        while(users.hasNext() && !found) {
             jonhdoe = users.next();
             if (jonhdoe.getName().equals(name1)) {
                 found2 = jonhdoe.checkFriend(name2);

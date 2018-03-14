@@ -6,7 +6,8 @@ public class PeopleClass implements People{
 
     public PeopleClass(int size){
         people = new Person[size];
-        counter = -1;
+        counter = 0;
+        current = -1;
     }
 
     @Override
