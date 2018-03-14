@@ -14,6 +14,22 @@ public class Main {
     private static final String PEOPLE = "PESSOAS";
     private static final String UNKNOWN_COMMAND = "Comando inexistente!";
 
+    private static final String END_MSG = "Adeus." + "\n" + "\n";
+    private static final String PERSON_REGISTERED = "Pessoa registada.";
+    private static final String NO_REGISTRY = "Pessoa registada.";
+    private static final String SUCCESSFUL_REGISTRY = "Pessoa registada com sucesso.";
+    private static final String FRIENDSHIP_NON_EXISTENT = "Amizade inexistente.";
+    private static final String FRIENDSHIP_EXISTS = "Amizade existente.";
+    private static final String INVALID_FRIENDSHIP = "Amizade invalida.";
+    private static final String FRIENDSHIP_CREATED = "Amizade criada.";
+    private static final String EMPTY_FRIENDLIST = "Nao tem amigos registados.";
+    private static final String FRIENDLIST_MSG = "Lista de amigos:";
+    private static final String STATUS_CHANGED = "Estado alterado.";
+    private static final String EMPTY_SOCIAL_NETWORK = "Rede Social vazia.";
+    private static final String SOCIAL_NETWORK_USERS_MSG = "Lista de pessoas registadas:";
+    private static final int SN_MSG = 0;
+    private static final int FL_MSG = 1;
+
     public static void main(String args[]){
         Scanner input =  new Scanner(System.in);
         SocialNetwork SN = new SocialNetworkClass();
@@ -63,32 +79,32 @@ public class Main {
                 default:System.out.println(UNKNOWN_COMMAND);
             }
             if(!cmd.equals(EXIT))
-                 System.out.println("");
+                 System.out.println();
             else
-                System.out.print("Adeus." + "\n" + "\n");
+                System.out.print(END_MSG);
         }
     }
 
     private static void checkPerson(SocialNetwork SN, Scanner in){
         String name = in.nextLine();
         if (SN.checkPerson(name))
-            System.out.println("Pessoa registada.");
+            System.out.println();
         else
-            System.out.println("Sem registo.");
+            System.out.println(NO_REGISTRY);
     }
 
     private static void register(SocialNetwork SN, Scanner in){
         if (SN.register(in.nextLine(), in.nextLine(), in.nextLine()))
-            System.out.println("Pessoa registada com sucesso.");
+            System.out.println(SUCCESSFUL_REGISTRY);
         else
-            System.out.println("Pessoa registada.");
+            System.out.println(PERSON_REGISTERED);
     }
 
     private static void checkFriendship(SocialNetwork SN, Scanner in){
         if (SN.checkFriendship(in.nextLine(), in.nextLine()))
-            System.out.println("Amizade existente.");
+            System.out.println(FRIENDSHIP_EXISTS);
         else
-            System.out.println("Amizade inexistente.");
+            System.out.println(FRIENDSHIP_NON_EXISTENT);
     }
 
     private static void friends(SocialNetwork SN, Scanner in) {
@@ -97,20 +113,20 @@ public class Main {
         switch (SN.friend(name1, name2)){
 
             case SocialNetwork.NO_REGISTRY:
-                System.out.println("Sem registo.");
+                System.out.println(NO_REGISTRY);
                 break;
 
             case SocialNetwork.INVALID_FRIENDSHIP:
-                System.out.println("Amizade invalida.");
+                System.out.println(INVALID_FRIENDSHIP);
                 break;
 
             case SocialNetwork.FRIENDSHIP_ALREADY_EXISTS:
-                System.out.println("Amizade existente.");
+                System.out.println(FRIENDSHIP_EXISTS);
                 break;
 
             case SocialNetwork.SUCCESSFUL_FRIENDSHIP:
                 SN.friend(name1, name2);
-                System.out.println("Amizade criada.");
+                System.out.println(FRIENDSHIP_CREATED);
         }
     }
 
@@ -118,19 +134,11 @@ public class Main {
         People friendList;
         String name = in.nextLine();
         if(!SN.checkPerson(name))
-            System.out.println("Sem registo.");
+            System.out.println(NO_REGISTRY);
         else {
             friendList = SN.checkFriendList(name);
             friendList.initializeIterator();
-            if (!friendList.hasNext())
-                System.out.println("Nao tem amigos registados.");
-            else{
-                 System.out.println("Lista de amigos:");
-                 while(friendList.hasNext()) {
-                   Person friend = friendList.next();
-                   System.out.println(friend.getName() + "; " + friend.getEmail());
-                }
-            }
+           listPeople(friendList, FL_MSG);
         }
     }
 
@@ -138,17 +146,17 @@ public class Main {
         String name = in.nextLine();
         String status =  in.nextLine();
         if(!SN.checkPerson(name))
-            System.out.println("Sem registo.");
+            System.out.println(NO_REGISTRY);
         else {
             SN.changeStatus(name, status);
-            System.out.println("Estado alterado.");
+            System.out.println(STATUS_CHANGED);
         }
     }
 
     private static void checkStatus(SocialNetwork SN, Scanner in){
        String name = in.nextLine();
         if(!SN.checkPerson(name))
-            System.out.println("Sem registo.");
+            System.out.println(NO_REGISTRY);
         else
             System.out.println(SN.checkStatus(name));
     }
@@ -156,12 +164,22 @@ public class Main {
     private static void people(SocialNetwork SN){
         People users = SN.getUsers();
         users.initializeIterator();
-        if(!users.hasNext())
-            System.out.println("Rede Social vazia.");
+        listPeople(users, SN_MSG);
+    }
+    private static void listPeople(People people, int type){
+        if(!people.hasNext()) {
+            if(type == SN_MSG)
+                System.out.println(EMPTY_SOCIAL_NETWORK);
+            else
+                System.out.println(EMPTY_FRIENDLIST);
+        }
         else{
-            System.out.println("Lista de pessoas registadas:");
-            while(users.hasNext()) {
-                Person jonhdoe = users.next();
+            if(type == SN_MSG)
+                System.out.println(SOCIAL_NETWORK_USERS_MSG);
+            else
+                System.out.println(FRIENDLIST_MSG);
+            while(people.hasNext()) {
+                Person jonhdoe = people.next();
                 System.out.println(jonhdoe.getName() + "; " + jonhdoe.getEmail());
             }
         }
