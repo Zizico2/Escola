@@ -51,14 +51,24 @@ public class SocialNetworkClass implements SocialNetwork{
     @Override
     public int friend(String name1, String name2){
         int res;
-        if(checkPerson(name1) || checkPerson(name2))
+        Person jonhdoe1;
+        Person jonhdoe2;
+
+        if(!checkPerson(name1) && !checkPerson(name2))
             res = NO_REGISTRY;
         else if(checkFriendship(name1,name2))
             res = FRIENDSHIP_ALREADY_EXISTS;
         else if (name1.equals(name2))
             res = INVALID_FRIENDSHIP;
-        else
+        else {
+            jonhdoe1 = getPerson(name1);
+            jonhdoe2 =  getPerson(name2);
+
+            jonhdoe1.addFriend(jonhdoe2);
+            jonhdoe2.addFriend(jonhdoe1);
+
             res = SUCCESSFUL_FRIENDSHIP;
+        }
         return res;
     }
 
@@ -108,5 +118,18 @@ public class SocialNetworkClass implements SocialNetwork{
     @Override
     public People getUsers() {
         return users;
+    }
+
+    private Person getPerson(String name){
+       Person jonhdoe =  null;
+       boolean found = false;
+       users.initializeIterator();
+       while(users.hasNext() && !found){
+           jonhdoe = users.next();
+           if(jonhdoe.getName().equals(name)){
+               found = true;
+           }
+       }
+        return jonhdoe;
     }
 }

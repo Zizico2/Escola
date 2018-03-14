@@ -62,7 +62,10 @@ public class Main {
 
                 default:System.out.println(UNKNOWN_COMMAND);
             }
-            System.out.println("");
+            if(!cmd.equals(EXIT))
+                 System.out.println("");
+            else
+                System.out.print("Adeus." + "\n" + "\n");
         }
     }
 
@@ -102,7 +105,7 @@ public class Main {
                 break;
 
             case SocialNetwork.FRIENDSHIP_ALREADY_EXISTS:
-                System.out.println("Amizade existente");
+                System.out.println("Amizade existente.");
                 break;
 
             case SocialNetwork.SUCCESSFUL_FRIENDSHIP:
@@ -114,7 +117,7 @@ public class Main {
     private static void checkFriendList(SocialNetwork SN, Scanner in){
         People friendList;
         String name = in.nextLine();
-        if(SN.checkPerson(name))
+        if(!SN.checkPerson(name))
             System.out.println("Sem registo.");
         else {
             friendList = SN.checkFriendList(name);
@@ -134,7 +137,7 @@ public class Main {
     private static void newStatus(SocialNetwork SN, Scanner in){
         String name = in.nextLine();
         String status =  in.nextLine();
-        if(SN.checkPerson(name))
+        if(!SN.checkPerson(name))
             System.out.println("Sem registo.");
         else {
             SN.changeStatus(name, status);
@@ -154,7 +157,7 @@ public class Main {
         People users = SN.getUsers();
         users.initializeIterator();
         if(!users.hasNext())
-            System.out.println("Rede social vazia.");
+            System.out.println("Rede Social vazia.");
         else{
             System.out.println("Lista de pessoas registadas:");
             while(users.hasNext()) {
