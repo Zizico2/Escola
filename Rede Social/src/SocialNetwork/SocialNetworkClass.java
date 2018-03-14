@@ -54,7 +54,7 @@ public class SocialNetworkClass implements SocialNetwork{
         Person jonhdoe1;
         Person jonhdoe2;
 
-        if(!checkPerson(name1) && !checkPerson(name2))
+        if(!checkPerson(name1) || !checkPerson(name2))
             res = NO_REGISTRY;
         else if(checkFriendship(name1,name2))
             res = FRIENDSHIP_ALREADY_EXISTS;
@@ -62,7 +62,7 @@ public class SocialNetworkClass implements SocialNetwork{
             res = INVALID_FRIENDSHIP;
         else {
             jonhdoe1 = getPerson(name1);
-            jonhdoe2 =  getPerson(name2);
+            jonhdoe2 = getPerson(name2);
 
             jonhdoe1.addFriend(jonhdoe2);
             jonhdoe2.addFriend(jonhdoe1);
