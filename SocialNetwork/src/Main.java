@@ -1,5 +1,9 @@
+import SocialNetwork.People;
+import SocialNetwork.Person;
+import SocialNetwork.SocialNetwork;
+import SocialNetwork.SocialNetworkClass;
+
 import java.util.Scanner;
-import SocialNetwork.*;
 
 public class Main {
 
@@ -83,7 +87,7 @@ public class Main {
                 default:System.out.println(UNKNOWN_COMMAND);
             }
             if(!cmd.equals(EXIT))
-                 System.out.println();
+                System.out.println();
             else
                 System.out.print(END_MSG);
         }
@@ -116,8 +120,8 @@ public class Main {
 
     // Tenta criar uma amizade entre duas pessoas recebe o resultado e escreve na consola a mensagem respetiva.
     private static void friends(SocialNetwork SN, Scanner in) {
-       String name1 = in.nextLine();
-       String name2 = in.nextLine();
+        String name1 = in.nextLine();
+        String name2 = in.nextLine();
         switch (SN.friend(name1, name2)){
 
             case SocialNetwork.NO_REGISTRY:
@@ -147,7 +151,7 @@ public class Main {
         else {
             friendList = SN.checkFriendList(name);
             friendList.initializeIterator();
-           listPeople(friendList, FL_MSG);
+            listPeople(friendList, FL_MSG);
         }
     }
 
@@ -165,7 +169,7 @@ public class Main {
 
     // Verifica se a pessoa existe, se sim escreve o seu estado, se nao escreve a mensagem respetiva na consola.
     private static void checkStatus(SocialNetwork SN, Scanner in){
-       String name = in.nextLine();
+        String name = in.nextLine();
         if(!SN.checkPerson(name))
             System.out.println(NO_REGISTRY);
         else
@@ -187,8 +191,7 @@ public class Main {
                 System.out.println(EMPTY_SOCIAL_NETWORK);
             else
                 System.out.println(EMPTY_FRIENDLIST);
-        }
-        else{
+        } else {
             if(type == SN_MSG)
                 System.out.println(SOCIAL_NETWORK_USERS_MSG);
             else
