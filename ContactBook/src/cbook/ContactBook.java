@@ -97,8 +97,7 @@ public class ContactBook implements ContactBookInterface {
 
     private void resize() {
         Contact tmp[] = new Contact[2 * contacts.length];
-        for (int i = 0; i < counter; i++)
-            tmp[i] = contacts[i];
+        System.arraycopy(contacts, 0,0,counter);
         contacts = tmp;
     }
 
