@@ -11,6 +11,8 @@ public interface SocialNetwork {
     int NO_REGISTRY = 1;
     int FRIENDSHIP_ALREADY_EXISTS = 2;
     int INVALID_FRIENDSHIP = 3;
+    int FRIENDSHIP_NOT_EXISTENT = 4;
+    int SUCCESSFUL_POST = 5;
 
     /*
       Determina se existe um utilizador com nome igual ao do argumento.
@@ -70,5 +72,7 @@ public interface SocialNetwork {
                 People users
      */
     People getUsers();
+
+    Timeline getTimeline(String name);
 
 }

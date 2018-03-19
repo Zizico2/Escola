@@ -127,6 +127,36 @@ public class SocialNetworkClass implements SocialNetwork{
         return users;
     }
 
+    public Timeline getTimeline(String name){
+        if(!checkPerson(name))
+            return null;
+        else
+            return getPerson(name).getTimeline();
+    }
+
+    public boolean addPost(String author, String post){
+        if(!checkPerson(author))
+            return false;
+        else{
+            getPerson(author).addPost(post, author);
+            return true;
+        }
+
+    }
+
+    public int addPost(String author, String subject, String post){
+        if(!checkPerson(author))
+            return NO_REGISTRY;
+        else if(!checkFriendship(author,subject))
+            return FRIENDSHIP_NOT_EXISTENT;
+        else{
+            getPerson(subject).addPost(post,author);
+            return SUCCESSFUL_POST;
+        }
+    }
+
+
+
     /*
       Retorna o utilizador com o mesmo nome que o do argumento, se nao existir retorna null.
       @returns -
@@ -144,4 +174,5 @@ public class SocialNetworkClass implements SocialNetwork{
        }
         return jonhdoe;
     }
+
 }

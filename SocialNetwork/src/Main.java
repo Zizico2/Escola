@@ -2,6 +2,7 @@ import SocialNetwork.People;
 import SocialNetwork.Person;
 import SocialNetwork.SocialNetwork;
 import SocialNetwork.SocialNetworkClass;
+import SocialNetwork.Timeline;
 
 import java.util.Scanner;
 
@@ -15,13 +16,14 @@ public class Main {
     // Constantes para o interpretador
     private static final String EXIT = "SAIR";
     private static final String CHECK_PERSON = "CONSULTAPESSOA";
-    private static final String REGISTER= "REGISTA";
+    private static final String REGISTER = "REGISTA";
     private static final String CHECK_FRIENDSHIP = "CONSULTAAMIZADE";
     private static final String FRIENDS = "AMIGOS";
     private static final String CHECK_FRIEND_LIST = "CONSULTAAMIGOS";
     private static final String NEW_STATUS = "NOVOESTADO";
     private static final String CHECK_STATUS = "CONSULTAESTADO";
     private static final String PEOPLE = "PESSOAS";
+    private static final String LIST_TIMELINE = "MURAL";
     private static final String UNKNOWN_COMMAND = "Comando inexistente!";
 
     // Constantes para os metodos privados da main
@@ -87,6 +89,9 @@ public class Main {
                     people(SN);
                     break;
 
+                case LIST_TIMELINE:
+                    listTimeline();
+                    break;
                 case EXIT: break;
 
                 default:System.out.println(UNKNOWN_COMMAND);
@@ -96,6 +101,13 @@ public class Main {
             else
                 System.out.print(END_MSG);
         }
+    }
+
+    private static void listTimeline(Scanner in, SocialNetwork SN) {
+        Timeline timeline = SN.getTimeline(in.nextLine());
+
+
+
     }
 
     // Verifica se a pessoa existe e escreve na consola a mensagem respetiva.

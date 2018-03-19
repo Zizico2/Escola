@@ -50,4 +50,8 @@ package SocialNetwork;
                     People friendList
          */
         People getFriendList();
+
+        void addPost(String post,String author);
+
+        Timeline getTimeline();
 }

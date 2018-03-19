@@ -5,11 +5,14 @@ package SocialNetwork;
  * 		@author Bernardo Borda d'Agua
  */
 
+
+
 public class PersonClass implements Person {
 
 //    VARIAVEIS
     private String status,name,email;
     private People friendList;
+    private Timeline timeline;
 
 //    CONSTRUTOR
     public PersonClass(String name, String email, String status){
@@ -17,6 +20,7 @@ public class PersonClass implements Person {
         this.email = email;
         this.name = name;
         friendList = new PeopleClass(People.FRIEND_LIST_SIZE);
+        timeline =  new TimelineClass();
     }
 
     @Override
@@ -57,5 +61,13 @@ public class PersonClass implements Person {
     @Override
     public People getFriendList(){
         return friendList;
+    }
+
+    public void addPost(String post, String author){
+        timeline.addPost(post,author);
+    }
+
+    public Timeline getTimeline(){
+        return timeline;
     }
 }
