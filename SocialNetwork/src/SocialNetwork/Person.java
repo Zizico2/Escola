@@ -1,5 +1,10 @@
 package SocialNetwork;
 
+/*
+ * 		@author Tiago Guerreiro
+ * 		@author Bernardo Borda d'Agua
+ */
+
     public interface Person {
 
         // Adiciona o argumento Person (pessoa) a friendList.

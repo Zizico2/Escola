@@ -1,5 +1,10 @@
 package SocialNetwork;
 
+/*
+ * 		@author Tiago Guerreiro
+ * 		@author Bernardo Borda d'Agua
+ */
+
 public interface SocialNetwork {
     // CONSTANTES
     int SUCCESSFUL_FRIENDSHIP = 0;

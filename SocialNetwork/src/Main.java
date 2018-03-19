@@ -5,6 +5,11 @@ import SocialNetwork.SocialNetworkClass;
 
 import java.util.Scanner;
 
+/*
+ * 		@author Tiago Guerreiro
+ * 		@author Bernardo Borda d'Agua
+ */
+
 public class Main {
 
     // Constantes para o interpretador

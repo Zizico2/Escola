@@ -1,5 +1,10 @@
 package SocialNetwork;
 
+/*
+ * 		@author Tiago Guerreiro
+ * 		@author Bernardo Borda d'Agua
+ */
+
 public class PeopleClass implements People{
 
 //        VARIAVEIS

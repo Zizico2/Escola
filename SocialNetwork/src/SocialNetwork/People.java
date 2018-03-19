@@ -1,5 +1,10 @@
 package SocialNetwork;
 
+/*
+ * 		@author Tiago Guerreiro
+ * 		@author Bernardo Borda d'Agua
+ */
+
 public interface People {
 //    CONSTANTES
     int FRIEND_LIST_SIZE = 50;
