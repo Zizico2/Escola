@@ -25,7 +25,7 @@ public class PersonClass implements Person {
 
     @Override
     public void addFriend(Person friend){
-        friendList.addPerson(friend);
+        friendList.add(friend);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class PersonClass implements Person {
     }
 
     public void addPost(String post, String author){
-        timeline.addPost(post,author);
+        timeline.add(post,author);
     }
 
     public Timeline getTimeline(){
