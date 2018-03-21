@@ -73,6 +73,6 @@ public interface SocialNetwork {
      */
     People getUsers();
 
-    Timeline getTimeline(String name);
+    Timeline getTimeline(String user, String subject);
 
 }

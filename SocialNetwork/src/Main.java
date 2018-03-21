@@ -90,7 +90,7 @@ public class Main {
                     break;
 
                 case LIST_TIMELINE:
-                    listTimeline();
+                    listTimeline(SN, in);
                     break;
                 case EXIT: break;
 
@@ -103,8 +103,20 @@ public class Main {
         }
     }
 
-    private static void listTimeline(Scanner in, SocialNetwork SN) {
-        Timeline timeline = SN.getTimeline(in.nextLine());
+    private static void listTimeline( SocialNetwork SN, Scanner in) {
+        String user = in.nextLine();
+        String friend = in.nextLine();
+        Timeline timeline;
+
+        if (!(SN.checkPerson(user) && SN.checkPerson(friend)))
+            System.out.println(NO_REGISTRY);
+        else if (!SN.checkFriendship(user, friend))
+                System.out.println(FRIENDSHIP_NON_EXISTENT);
+        else
+                timeline = SN.getTimeline(user, friend);
+
+
+
 
 
 

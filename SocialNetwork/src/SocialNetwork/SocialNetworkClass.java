@@ -127,11 +127,8 @@ public class SocialNetworkClass implements SocialNetwork{
         return users;
     }
 
-    public Timeline getTimeline(String name){
-        if(!checkPerson(name))
-            return null;
-        else
-            return getPerson(name).getTimeline();
+    public Timeline getTimeline(String user, String Subject){
+            return getPerson(user).getTimeline();
     }
 
     public boolean addPost(String author, String post){
