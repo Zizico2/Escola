@@ -62,8 +62,8 @@ public class SocialNetworkClass implements SocialNetwork{
         else if (name1.equals(name2))
             return INVALID_FRIENDSHIP;
         else {
-            jonhdoe1 = getPerson(name1);
-            jonhdoe2 = getPerson(name2);
+            jonhdoe1 = getUser(name1);
+            jonhdoe2 = getUser(name2);
 
             jonhdoe1.addFriend(jonhdoe2);
             jonhdoe2.addFriend(jonhdoe1);
@@ -116,26 +116,29 @@ public class SocialNetworkClass implements SocialNetwork{
         return users;
     }
 
+    @Override
     public Timeline getTimeline(String user, String Subject){
-        return getPerson(user).getTimeline();
+        return getUser(user).getTimeline();
     }
 
+    @Override
     public boolean addPost(String author, String post){
         if(!checkPerson(author))
             return false;
         else{
-            getPerson(author).addPost(post, author);
+            getUser(author).addPost(post, author);
             return true;
         }
     }
 
+    @Override
     public int addPost(String author, String subject, String post){
         if(!checkPerson(author))
             return NO_REGISTRY;
         else if(!checkFriendship(author,subject))
             return FRIENDSHIP_NOT_EXISTENT;
         else{
-            getPerson(subject).addPost(post,author);
+            getUser(subject).addPost(post,author);
             return SUCCESSFUL_POST;
         }
     }
@@ -147,7 +150,7 @@ public class SocialNetworkClass implements SocialNetwork{
       @returns -
                  Person jonhdoe
      */
-    private Person getPerson(String name){
+    public Person getUser(String name){
        Person jonhdoe =  null;
 
        users.initializeIterator();

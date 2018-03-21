@@ -22,6 +22,8 @@ public class Main {
     private static final String NEW_STATUS = "NOVOESTADO";
     private static final String CHECK_STATUS = "CONSULTAESTADO";
     private static final String PEOPLE = "PESSOAS";
+    private static final String SELF_POST = "POSTARPUBLICO";
+    private static final String FRIEND_POST = "POSTAR";
     private static final String LIST_TIMELINE = "MURAL";
     private static final String UNKNOWN_COMMAND = "Comando inexistente!";
 
@@ -91,6 +93,14 @@ public class Main {
                 case LIST_TIMELINE:
                     listTimeline(SN, in);
                     break;
+
+                case SELF_POST:
+                    selfPost(SN, in);
+                    break;
+
+                case FRIEND_POST:
+                    Main.friendPost(SN, in);
+                    break;
                 case EXIT:
                     break;
 
@@ -104,9 +114,31 @@ public class Main {
         }
     }
 
-    private static void listTimeline(SocialNetwork SN, Scanner in) {
+    private static void friendPost(SocialNetwork SN, Scanner in){
+        String author = in.nextLine();
+        String post = in.nextLine();
+        String timeLineOwner = in.nextLine();
+        int result = SN.addPost(author,timeLineOwner,post);
+        if(result == SocialNetwork.NO_REGISTRY)
+            System.out.println(NO_REGISTRY);
+        else if(result == SocialNetwork.FRIENDSHIP_NOT_EXISTENT)
+            System.out.println(FRIENDSHIP_NON_EXISTENT);
+        else
+            System.out.println("Post registado.");
+    }
+
+    private static void selfPost(SocialNetwork SN, Scanner in){
         String user = in.nextLine();
+        String post = in.nextLine();
+        if(!SN.addPost(user,post))
+            System.out.println(NO_REGISTRY);
+        else
+            System.out.println("Post registado.");
+    }
+
+    private static void listTimeline(SocialNetwork SN, Scanner in) {
         String friend = in.nextLine();
+        String user = in.nextLine();
         Timeline timeline;
 
         if (!(SN.checkPerson(user) && SN.checkPerson(friend)))
@@ -115,18 +147,13 @@ public class Main {
             System.out.println(FRIENDSHIP_NON_EXISTENT);
         else {
             timeline = SN.getTimeline(user, friend);
-            People users = SN.getUsers();
-            Person jonhdoe;
-            users.initializeIterator();
-            do {
-                jonhdoe = users.next();
-            } while ((users.hasNext() && jonhdoe.getName().equals(user)));
-                System.out.println("Mural de" + jonhdoe.getName() + ":");
-                while (timeline.hasNext()) {
-                    String[] post = timeline.next();
-                    System.out.println("POST" + post[0] + " " + post[1]);
-                }
-
+            Person jonhdoe = SN.getUser(user);
+            System.out.println("Mural de " + jonhdoe.getName() + ":");
+            timeline.initializeIterator();
+            while (timeline.hasNext()) {
+                String[] post = timeline.next();
+                System.out.println("POST " + post[0] + ": " + post[1]);
+            }
         }
     }
 
