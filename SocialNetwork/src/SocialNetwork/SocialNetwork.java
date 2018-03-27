@@ -75,4 +75,10 @@ public interface SocialNetwork {
 
     Timeline getTimeline(String user, String subject);
 
+    Person getUser(String name);
+
+    boolean addPost(String author, String post);
+
+    int addPost(String author, String subject, String post);
+
 }

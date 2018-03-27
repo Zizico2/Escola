@@ -15,11 +15,10 @@ public class TimelineClass implements Timeline {
         counter = 0;
         current = -1;
         timeline =  new String[DEFAULT_SIZE][DIMENSIONS];
-        timeline[1][6] = "";
     }
 
     @Override
-    public void addPost(String post, String author) {
+    public void add(String post, String author) {
         if (counter == timeline.length - 1)
             resize();
         timeline[counter][POST] = post;

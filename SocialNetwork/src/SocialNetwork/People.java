@@ -11,7 +11,7 @@ public interface People {
     int SOCIAL_NETWORK_SIZE = 500;
 
     // Adiciona a pessoa argumento ao vetor people.
-    void addPerson(Person person);
+    void add(Person person);
 
     // Inicializa o iterador.
     void initializeIterator();

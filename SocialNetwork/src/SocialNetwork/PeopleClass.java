@@ -19,7 +19,7 @@ public class PeopleClass implements People{
     }
 
     @Override
-    public void addPerson(Person  person){
+    public void add(Person  person){
         people[counter++] = person;
     }
 

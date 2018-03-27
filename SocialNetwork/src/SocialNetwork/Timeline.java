@@ -12,7 +12,7 @@ public interface Timeline {
     int DIMENSIONS = 2;
 
     // Adiciona a pessoa argumento ao vetor people.
-    void addPost(String post, String author);
+    void add(String post, String author);
 
     // Inicializa o iterador.
     void initializeIterator();
