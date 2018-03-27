@@ -1,5 +1,7 @@
 package CloudSharing;
 
+import CloudSharing.User.User;
+
 public interface Cloud {
 
     int SUCCESS = 0;

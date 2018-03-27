@@ -1,5 +1,8 @@
 package CloudSharing;
 
+import CloudSharing.User.PremiumUser;
+import CloudSharing.User.User;
+
 public class CloudClass implements Cloud {
 
     Iterator users;
@@ -36,6 +39,6 @@ public class CloudClass implements Cloud {
 
     @Override
     public Iterator listAll() {
-        return null;
+        return users;
     }
 }

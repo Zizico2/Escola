@@ -1,8 +1,8 @@
-package CloudSharing;
+package CloudSharing.User;
 
 public class PremiumUser extends User {
 
     public PremiumUser(String email) {
-        super();
+        super(email,true);
     }
 }
