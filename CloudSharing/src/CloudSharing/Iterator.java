@@ -30,4 +30,6 @@ public interface Iterator {
      *           false se nao adicionou o objeto.
      */
     boolean add(Object object);
+
+    boolean Has(Object object);
 }

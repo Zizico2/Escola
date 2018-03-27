@@ -1,7 +1,6 @@
 package CloudSharing;
 
-import CloudSharing.User.PremiumUser;
-import CloudSharing.User.User;
+import CloudSharing.User.*;
 
 public class CloudClass implements Cloud {
 
@@ -12,13 +11,20 @@ public class CloudClass implements Cloud {
     }
 
     @Override
-    public boolean addUser(String email, int type) {
-        PremiumUser u = new PremiumUser(email);
-        return users.add(u);
+    public boolean addUser(String email, boolean premiumAccount) {
+        User user;
+        if(premiumAccount)
+            user = new Premium(email);
+        else
+            user =  new Basic(email);
+        return users.add(user);
     }
 
     @Override
     public int upload(String email, String fileName, int mb) {
+
+
+
         return 0;
     }
 

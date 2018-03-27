@@ -1,6 +1,6 @@
 package CloudSharing;
 
-import CloudSharing.User.User;
+import CloudSharing.User.*;
 
 public interface Cloud {
 
@@ -15,11 +15,11 @@ public interface Cloud {
      * Adiciona uma conta.
      *
      * @param email - Identificador da conta.
-     * @param type - Tipo da conta(User.BASIC ou User.PREMIUM).
+     * @param premiumAccount - Tipo da conta(true se premium, false se basic).
      * @return - true se adicionou com successo;
      *           false se existia uma conta com o mesmo @param email.
      */
-    boolean addUser(String email, int type);
+    boolean addUser(String email, boolean premiumAccount);
 
     /**
      * Adiciona um ficheiro.

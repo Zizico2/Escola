@@ -1,20 +1,15 @@
 package CloudSharing.User;
 
-import CloudSharing.Files;
-import CloudSharing.Iterator;
+import CloudSharing.*;
 
-public abstract class User {
-
-    protected boolean premiumAccount;
-    protected Iterator files;
-    protected String email;
-
-    public User(String email, boolean premiumAccount){
-        files =  new Files();
-        this.email = email;
-        this.premiumAccount = premiumAccount;
-    }
+public interface User {
 
 
+    String getID();
 
+    int storage();
+
+    void upLoad(File file);
+
+    Iterator Files();
 }

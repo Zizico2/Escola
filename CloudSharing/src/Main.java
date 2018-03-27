@@ -3,17 +3,21 @@ import CloudSharing.*;
 
 public class Main {
 
+    private enum Command{
+        ADD ("ADD"),
+        UPLOAD ("UPLOAD"),
+        SHARE  ("SHARE"),
+        MINSPACE  ("MINSPACE"),
+        LISTFILES  ("LISTFILES"),
+        LISTALL  ("LISTALL"),
+        EXIT  ("EXIT"),
+        UNKNOWN  ("Unknown command!");
 
-
-    private static final String ADD = "ADD";
-    private static final String UPLOAD = "UPLOAD";
-    private static final String SHARE = "SHARE";
-    private static final String MINSPACE = "MINSPACE";
-    private static final String LISTFILES = "LISTFILES";
-    private static final String LISTALL = "LISTALL";
-    private static final String EXIT = "EXIT";
-
-    private static final String UNKNOWN_CMD = "Unknown command!";
+        private final String cmd;
+        Command(String cmd){
+            this.cmd = cmd;
+        }
+    }
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
@@ -22,35 +26,41 @@ public class Main {
 
     }
 
-    private static void executeCommand(Scanner in, Cloud C ){
+    private static void executeCommand(Scanner in, Cloud Cloud ){
         String cmd = "";
 
-        while(!cmd.equals(EXIT)){
+        while(cmd.equals(Command.EXIT.cmd)){
             cmd = in.next().toUpperCase();
+            try {
+                Command command = Command.valueOf(cmd);
+                switch(command){
+                    case ADD:
+                        break;
 
-            switch(cmd){
-                case ADD:
-                    break;
+                    case UPLOAD:
+                        break;
 
-                case UPLOAD:
-                    break;
+                    case SHARE:
+                        break;
 
-                case SHARE:
-                    break;
+                    case MINSPACE:
+                        break;
 
-                case MINSPACE:
-                    break;
+                    case LISTFILES:
+                        break;
 
-                case LISTFILES:
-                    break;
+                    case LISTALL:
+                        break;
 
-                case LISTALL:
-                    break;
+                    case EXIT:
+                        break;
 
-                case EXIT:
-                    break;
-
-                default:System.out.println(UNKNOWN_CMD);
+                    case UNKNOWN:
+                        break;
+                    default:
+                }
+            } catch(IllegalArgumentException e){
+                System.out.println(Command.UNKNOWN.cmd);
             }
         }
     }

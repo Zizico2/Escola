@@ -1,10 +1,10 @@
 package CloudSharing;
 
-import CloudSharing.User.User;
+import CloudSharing.User.*;
 
 public class Users implements Iterator {
 
-   private User[] users;
+    private User[] users;
     private int counter;
     private int current;
 
@@ -21,7 +21,7 @@ public class Users implements Iterator {
 
     @Override
     public Object next() {
-        return users[current];
+        return users[current++];
     }
 
     @Override
@@ -31,6 +31,22 @@ public class Users implements Iterator {
 
     @Override
     public boolean add(Object object) {
+        if(!Has(object)){
+         users[counter++] = (User) object;
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean Has(Object object) {
+       initializeIterator();
+       User user = (UserAbstract)object;
+        while(hasNext()){
+            User u = (UserAbstract) next();
+            if(u.getID().equals((user.getID())))
+                return true;
+        }
         return false;
     }
 }
