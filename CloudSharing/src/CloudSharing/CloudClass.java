@@ -10,7 +10,8 @@ public class CloudClass implements Cloud {
 
     @Override
     public boolean addUser(String email, int type) {
-            return users.addUser(email,type);
+        PremiumUser u = new PremiumUser(email);
+        return users.add(u);
     }
 
     @Override

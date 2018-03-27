@@ -8,4 +8,6 @@ public interface Iterator {
 
     void initializeIterator();
 
+    boolean add(Object object);
+
 }
