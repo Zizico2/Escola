@@ -60,7 +60,7 @@ public interface Cloud {
      * Retorna todos os ficheiros de uma conta.
      *
      * @param email - Identificador da conta.
-     * @return - Objeto: Interface Iterator, Class Files.
+     * @return - Objeto: Interface Iterator, Class getFiles.
      */
     Iterator listFiles(String email);
 

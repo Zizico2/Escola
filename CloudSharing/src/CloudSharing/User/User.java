@@ -4,12 +4,15 @@ import CloudSharing.*;
 
 public interface User {
 
+    boolean PREMIUM = true;
+    boolean BASIC = false;
+
 
     String getID();
 
-    int storage();
+    int getStorage();
 
-    void upLoad(File file);
+    boolean upload(File file);
 
-    Iterator Files();
+    Iterator getFiles();
 }

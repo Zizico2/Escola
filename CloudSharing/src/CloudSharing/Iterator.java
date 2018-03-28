@@ -29,7 +29,5 @@ public interface Iterator {
      * @return - true se adicionou o objeto com sucesso;
      *           false se nao adicionou o objeto.
      */
-    boolean add(Object object);
-
-    boolean Has(Object object);
+    void add(Object object);
 }

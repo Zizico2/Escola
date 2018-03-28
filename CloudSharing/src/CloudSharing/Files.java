@@ -30,23 +30,7 @@ public class Files implements Iterator {
     }
 
     @Override
-    public boolean add(Object object) {
-      if(!Has(object)){
-          files[counter++] = (FileClass)object;
-          return true;
-      }
-        return false;
-    }
-
-    @Override
-    public boolean Has(Object object) {
-        initializeIterator();
-        File newFile = (FileClass)object;
-        while(hasNext()){
-            File f = (FileClass) next();
-            if(f.getName().equals(newFile.getName()))
-                return true;
-        }
-        return false;
+    public void add(Object object) {
+        files[counter++] = (FileClass) object;
     }
 }

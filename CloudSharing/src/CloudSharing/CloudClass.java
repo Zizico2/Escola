@@ -13,11 +13,16 @@ public class CloudClass implements Cloud {
     @Override
     public boolean addUser(String email, boolean premiumAccount) {
         User user;
-        if(premiumAccount)
+        // eu sei que "premiumAccount == User.PREMIUM" é redundante mas n sei se assim ficaria mais claro já que temos as constantes
+        if(premiumAccount == User.PREMIUM)
             user = new Premium(email);
         else
             user =  new Basic(email);
-        return users.add(user);
+        if (!checkDuplicateUsers(user)) {
+            users.add(user);
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -46,5 +51,16 @@ public class CloudClass implements Cloud {
     @Override
     public Iterator listAll() {
         return users;
+    }
+
+    public boolean checkDuplicateUsers(User user) {
+        users.initializeIterator();
+        User u;
+        while(users.hasNext()){
+              u = (User) users.next();
+            if(u.getID().equals((user.getID())))
+                return true;
+        }
+        return false;
     }
 }
