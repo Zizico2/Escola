@@ -53,7 +53,7 @@ public class CloudClass implements Cloud {
         return users;
     }
 
-    public boolean checkDuplicateUsers(User user) {
+    private boolean checkDuplicateUsers(User user) {
         users.initializeIterator();
         User u;
         while(users.hasNext()){
