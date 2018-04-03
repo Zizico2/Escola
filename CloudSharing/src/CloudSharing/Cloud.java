@@ -9,7 +9,7 @@ public interface Cloud {
     int FILE_ALREADY_EXISTS = 2,FILE_NOT_EXIST = 2;
     int TOO_BIG = 3;
     int SHARING_ALREADY_EXISTS = 4;
-    int SHARING_UNAUTHORIZED = 5;
+    int UNAUTHORIZED_SHARING = 5;
 
     /**
      * Adiciona uma conta.

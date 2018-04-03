@@ -1,8 +1,9 @@
 package CloudSharing;
 
-public interface Iterator {
+public interface Iterator<Element> {
 
     int DEFAULT_SIZE = 10;
+    int GROWTH_RATE = 2;
     /**
      * Verifica se existe um elemento a seguir no vetor.
      *
@@ -13,21 +14,16 @@ public interface Iterator {
 
     /**
      *
-     * @return - Objeto - Object Class
+     * @return - Element - Object Class
      */
-    Object next();
-
-    /**
-     * Inicializa o iterador.
-     */
-    void initializeIterator();
+    Element next();
 
     /**
      * Adiciona um objeto ao vetor da class.
      *
-     * @param object objeto a adicionar
-     * @return - true se adicionou o objeto com sucesso;
-     *           false se nao adicionou o objeto.
+     * @param object objeto a adicionar.
      */
-    void add(Object object);
+    void add(Element object);
+
+    void initialize();
 }

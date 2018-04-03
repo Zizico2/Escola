@@ -12,7 +12,9 @@ public interface User {
 
     int getStorage();
 
-    boolean upload(File file);
+    void upload(File file);
 
     Iterator getFiles();
+
+    boolean isPremium();
 }

@@ -5,7 +5,7 @@ public class FileClass implements File {
     private String owner;
     private String name;
 
-    public FileClass(String name, String owner, int size){
+    FileClass(String name, String owner, int size){
         this.name = name;
         this.owner = owner;
         this.size = size;

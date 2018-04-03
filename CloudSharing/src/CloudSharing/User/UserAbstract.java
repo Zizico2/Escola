@@ -4,17 +4,22 @@ import CloudSharing.*;
 
 public abstract class UserAbstract implements User {
 
-    protected boolean accountType;
-    protected Iterator files;
-    protected String email;
-    protected int memoryStorage;
+     boolean accountType;
+     Iterator<File> files;
+     String email;
+     int memoryStorage;
 
-    protected UserAbstract(String email, boolean accountType) {
-        files = new Files();
+     UserAbstract(String email, boolean accountType) {
+        files = new IteratorClass<>();
         this.email = email;
         this.accountType = accountType;
     }
-    
+
+    @Override
+    public  boolean isPremium(){
+         return accountType;
+    }
+
     @Override
     public String getID(){
         return email;
@@ -25,29 +30,12 @@ public abstract class UserAbstract implements User {
         return memoryStorage;
     }
 
-    @Override
-    public boolean upload(File file){
-        if(!checkDuplicateFiles(file)) {
-            files.add(file);
-            return true;
-        }
-        return false;
-    }
+
+    public abstract void upload(File file);
 
     @Override
     public Iterator getFiles(){
         return files;
-    }
-
-    private boolean checkDuplicateFiles(File file) {
-        files.initializeIterator();
-        File f;
-        while(files.hasNext()){
-            f = (FileClass) files.next();
-            if(f.getName().equals(file.getName()))
-                return true;
-        }
-        return false;
     }
 
 }
