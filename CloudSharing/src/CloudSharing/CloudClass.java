@@ -116,8 +116,10 @@ public class CloudClass implements Cloud {
         files.initialize();
 
         while(files.hasNext()){
-            if(files.next().getName().equals(fileName))
+            if(files.next().getName().equals(fileName)) {
+
                 return true;
+            }
         }
         return false;
     }
