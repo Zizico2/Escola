@@ -15,7 +15,7 @@ public class Premium extends UserAbstract {
 
     @Override
     public void upload(File file) {
-        if (file.getOwner() == email){
+        if (file.getOwner().equals(email)){
             memoryStorage -= file.getSize();
             files.add(file);
         }
