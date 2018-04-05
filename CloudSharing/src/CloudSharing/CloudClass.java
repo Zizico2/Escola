@@ -65,7 +65,19 @@ public class CloudClass implements Cloud {
 
     @Override
     public User minSpace() {
-        return null;
+       users.initialize();
+       User user;
+       User minUser = null;
+       int min = Integer.MAX_VALUE;
+
+       while(users.hasNext()){
+           user = users.next();
+           if(user.getStorage() < min){
+               min = user.getStorage();
+               minUser = user;
+           }
+       }
+        return minUser;
     }
 
     @Override
@@ -100,13 +112,13 @@ public class CloudClass implements Cloud {
 
     private User getUser(String email){
         users.initialize();
-
+        User user = null;
         while(users.hasNext()){
-            User user = users.next();
+            user = users.next();
             if(user.getID().equals(email))
                 return user;
         }
-        return null;
+        return user;
     }
 
     @SuppressWarnings("unchecked")

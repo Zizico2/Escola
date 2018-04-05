@@ -11,10 +11,17 @@ public class Main {
 
         ACCOUNT_ADDED ("Account was added."),
         INVALID_ACCOUNT ("Account already exists."),
-        FILE_UPLOAD_SUCCESS ("File uploaded into account."),
+        FILE_UPLOADED ("File uploaded into account."),
         ACCOUNT_NOT_EXIST ("Account does not exist."),
         FILE_ALREADY_EXISTS ("File already exists in the account."),
-        TOO_BIG ("File size exceeds account capacity.");
+        TOO_BIG ("File size exceeds account capacity."),
+        FILE_SHARED ("File was shared."),
+        FILE_NOT_EXIST ("File does not exist."),
+        UNAUTHORIZED_SHARING ("Account does not allow file sharing."),
+        SHARING_ALREADY_EXISTS ("File already shared.");
+
+
+
 
 
         private final String msg;
@@ -62,6 +69,7 @@ public class Main {
                         break;
 
                     case SHARE:
+                        share(in, Cloud);
                         break;
 
                     case MINSPACE:
@@ -89,7 +97,6 @@ public class Main {
     private static void add(Scanner in, Cloud cloud){
         String email = in.next().trim();
         String type = in.nextLine().trim();
-        System.out.println(email  + "" + type);
         boolean premium = type.equals(PREMIUM.toLowerCase());
 
            if(cloud.addUser(email,premium))
@@ -104,16 +111,63 @@ public class Main {
         int fileSize = in.nextInt();
         int result = cloud.upload(email,fileName,fileSize);
 
-        if(result == Cloud.ACCOUNT_NOT_EXIST)
-            System.out.println(Message.ACCOUNT_NOT_EXIST.msg);
 
-        else if(result == Cloud.FILE_ALREADY_EXISTS)
-            System.out.println(Message.FILE_ALREADY_EXISTS.msg);
+        switch(result){
 
-        else if(result == Cloud.TOO_BIG)
-            System.out.println(Message.TOO_BIG.msg);
+            case Cloud.SUCCESS:
+                System.out.println(Message.FILE_UPLOADED.msg);
+                break;
 
-        else
-            System.out.println(Message.FILE_UPLOAD_SUCCESS.msg);
+            case Cloud.ACCOUNT_NOT_EXIST:
+                System.out.println(Message.ACCOUNT_NOT_EXIST.msg);
+                break;
+
+            case Cloud.FILE_ALREADY_EXISTS:
+                System.out.println(Message.FILE_ALREADY_EXISTS.msg);
+                break;
+
+            case Cloud.TOO_BIG:
+                System.out.println(Message.TOO_BIG.msg);
+                break;
+
+            default:System.out.println("ERROR");
+        }
+    }
+
+    private static void share(Scanner in, Cloud cloud){
+            String emailSender = in.next().trim();
+            String emailReceiver = in.next().trim();
+            String fileName = in.nextLine().trim();
+            int result = cloud.share(emailSender,emailReceiver,fileName);
+
+            switch(result){
+
+                case Cloud.SUCCESS:
+                    System.out.println(Message.FILE_SHARED.msg);
+                    break;
+
+                case Cloud.ACCOUNT_NOT_EXIST:
+                    System.out.println(Message.ACCOUNT_NOT_EXIST.msg);
+                    break;
+
+                case Cloud.FILE_NOT_EXIST:
+                    System.out.println(Message.FILE_NOT_EXIST.msg);
+                    break;
+
+                case Cloud.UNAUTHORIZED_SHARING:
+                    System.out.println(Message.UNAUTHORIZED_SHARING.msg);
+                    break;
+
+                case Cloud.SHARING_ALREADY_EXISTS:
+                    System.out.println(Message.SHARING_ALREADY_EXISTS.msg);
+                    break;
+
+                case Cloud.TOO_BIG:
+                    System.out.println(Message.TOO_BIG.msg);
+                    break;
+
+                default:
+                    System.out.println("ERROR");
+            }
     }
 }
