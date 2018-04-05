@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2cf7a074-1b17-4e90-963b-8bd628168db5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CloudSharing/CloudSharing/CloudClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CloudSharing/CloudSharing/CloudClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CloudSharing/User/Premium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloudSharing/User/Premium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CloudSharing/CloudClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloudSharing/CloudClass.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,14 +18,10 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="201" column="35" lean-forward="true" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
+            <state relative-caret-position="-1874">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#606#607#0" expanded="true" />
-                <element signature="e#644#645#0" expanded="true" />
-                <element signature="e#973#974#0" expanded="true" />
-                <element signature="e#1011#1012#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,15 +39,15 @@
       <file leaf-file-name="CloudClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CloudSharing/CloudClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
+            <state relative-caret-position="374">
+              <caret line="56" column="139" lean-forward="true" selection-start-line="56" selection-start-column="139" selection-end-line="56" selection-end-column="139" />
               <folding>
                 <element signature="e#154#155#0" expanded="true" />
                 <element signature="e#199#200#0" expanded="true" />
-                <element signature="e#2425#2426#0" expanded="true" />
-                <element signature="e#2453#2454#0" expanded="true" />
-                <element signature="e#2508#2509#0" expanded="true" />
-                <element signature="e#2564#2565#0" expanded="true" />
+                <element signature="e#2451#2452#0" expanded="true" />
+                <element signature="e#2479#2480#0" expanded="true" />
+                <element signature="e#2534#2535#0" expanded="true" />
+                <element signature="e#2590#2591#0" expanded="true" />
                 <element signature="e#2716#2746#0" expanded="true" />
                 <element signature="e#3103#3133#0" expanded="true" />
               </folding>
@@ -176,8 +171,8 @@
         <option value="$PROJECT_DIR$/src/CloudSharing/User/User.java" />
         <option value="$PROJECT_DIR$/src/CloudSharing/Cloud.java" />
         <option value="$PROJECT_DIR$/src/CloudSharing/User/UserAbstract.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/CloudSharing/User/Premium.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/CloudSharing/CloudClass.java" />
       </list>
     </option>
@@ -325,7 +320,7 @@
       <workItem from="1522794826120" duration="140000" />
       <workItem from="1522795634857" duration="4000" />
       <workItem from="1522873042176" duration="5557000" />
-      <workItem from="1522933169078" duration="8851000" />
+      <workItem from="1522933169078" duration="10070000" />
     </task>
     <task id="LOCAL-00001" summary="i think this is it">
       <created>1522794864914</created>
@@ -383,11 +378,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522943594941</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test 4 complete">
+      <created>1522944168737</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1522944168737</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33990000" />
+    <option name="totallyTimeSpent" value="35209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
@@ -403,7 +405,7 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49919137" weight="0.32889345" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49973047" visible="true" weight="0.32889345" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919137" visible="true" weight="0.32889345" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -471,7 +473,9 @@
     <MESSAGE value="test 1 complete" />
     <MESSAGE value="test 2 complete" />
     <MESSAGE value="test 3 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="test 3 complete" />
+    <MESSAGE value="test 4 complete" />
+    <MESSAGE value="test 5 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 5 complete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/CloudSharing/User/Premium.java">
@@ -510,10 +514,6 @@
           <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -581,10 +581,6 @@
           <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -652,10 +648,6 @@
           <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -722,10 +714,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -777,13 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CloudSharing/User/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CloudSharing/Cloud.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="804">
@@ -816,31 +797,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CloudSharing/User/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="201" column="35" lean-forward="true" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
+        <state relative-caret-position="-1874">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CloudSharing/CloudClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
+        <state relative-caret-position="374">
+          <caret line="56" column="139" lean-forward="true" selection-start-line="56" selection-start-column="139" selection-end-line="56" selection-end-column="139" />
           <folding>
             <element signature="e#154#155#0" expanded="true" />
             <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#2425#2426#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2508#2509#0" expanded="true" />
-            <element signature="e#2564#2565#0" expanded="true" />
+            <element signature="e#2451#2452#0" expanded="true" />
+            <element signature="e#2479#2480#0" expanded="true" />
+            <element signature="e#2534#2535#0" expanded="true" />
+            <element signature="e#2590#2591#0" expanded="true" />
             <element signature="e#2716#2746#0" expanded="true" />
             <element signature="e#3103#3133#0" expanded="true" />
           </folding>

@@ -54,8 +54,9 @@ public class CloudClass implements Cloud {
             else if(isSharingSameFile(emailOwner,emailReceiver,fileName))
                 return SHARING_ALREADY_EXISTS;
 
-            else if(!getUser(emailOwner).isPremium() && getFile(emailOwner,fileName).getSize()/2 >= getUser(emailReceiver).getStorage())
+            else if(!getUser(emailReceiver).isPremium() && getFile(emailOwner,fileName).getSize()/2 > getUser(emailReceiver).getStorage())
                 return TOO_BIG;
+
 
             File file = getFile(emailOwner,fileName);
             getUser(emailReceiver).upload(file);
