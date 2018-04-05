@@ -198,13 +198,13 @@ public class Main {
 
         else {
             files.initialize();
+            System.out.println("Account files:");
             while(files.hasNext()){
 
                 File file = files.next();
-                System.out.println("Account files:");
                 String shared = "";
 
-                if(file.getOwner().equals(email))
+                if(!file.getOwner().equals(email))
                     shared = " (shared)";
 
                 System.out.println(file.getName() + " (" + file.getSize() + " MB)" + shared);

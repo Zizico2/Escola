@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2cf7a074-1b17-4e90-963b-8bd628168db5" name="Default" comment="all commands  complete falta so mesmo usar os testes pra ver se passa">
+    <list default="true" id="2cf7a074-1b17-4e90-963b-8bd628168db5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CloudSharing/CloudSharing/CloudClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CloudSharing/CloudSharing/CloudClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CloudSharing/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CloudSharing/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CloudSharing/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloudSharing/Cloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CloudSharing/CloudClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloudSharing/CloudClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CloudSharing/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloudSharing/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CloudSharing/User/UserAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloudSharing/User/UserAbstract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,8 +20,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
+            <state relative-caret-position="354">
+              <caret line="206" column="20" selection-start-line="206" selection-start-column="20" selection-end-line="206" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#606#607#0" expanded="true" />
@@ -330,7 +326,7 @@
       <workItem from="1522794826120" duration="140000" />
       <workItem from="1522795634857" duration="4000" />
       <workItem from="1522873042176" duration="5557000" />
-      <workItem from="1522933169078" duration="6563000" />
+      <workItem from="1522933169078" duration="7728000" />
     </task>
     <task id="LOCAL-00001" summary="i think this is it">
       <created>1522794864914</created>
@@ -360,11 +356,25 @@
       <option name="project" value="LOCAL" />
       <updated>1522937533425</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="faltava por nos comandos i am stoopid">
+      <created>1522941451565</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1522941451565</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test 1 complete">
+      <created>1522942781426</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1522942781426</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31702000" />
+    <option name="totallyTimeSpent" value="32867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
@@ -376,11 +386,11 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50026953" side_tool="true" weight="0.32889345" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5008086" side_tool="true" weight="0.32889345" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49973047" weight="0.32889345" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49919137" weight="0.32889345" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49973047" visible="true" weight="0.32889345" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -444,7 +454,9 @@
     <MESSAGE value="upload e add with errors and messages complete&#10;forgot to save" />
     <MESSAGE value="Share command complete" />
     <MESSAGE value="all commands  complete falta so mesmo usar os testes pra ver se passa" />
-    <option name="LAST_COMMIT_MESSAGE" value="all commands  complete falta so mesmo usar os testes pra ver se passa" />
+    <MESSAGE value="faltava por nos comandos i am stoopid" />
+    <MESSAGE value="test 1 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 1 complete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/CloudSharing/User/Premium.java">
@@ -808,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
+        <state relative-caret-position="354">
+          <caret line="206" column="20" selection-start-line="206" selection-start-column="20" selection-end-line="206" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#606#607#0" expanded="true" />
