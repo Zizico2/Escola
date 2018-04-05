@@ -21,9 +21,6 @@ public class Main {
         FILE_NOT_EXIST ("File does not exist."),
         UNAUTHORIZED_SHARING ("Account does not allow file sharing."),
         SHARING_ALREADY_EXISTS ("File already shared."),
-
-
-
         EXITING ("Exiting...");
 
         private final String msg;

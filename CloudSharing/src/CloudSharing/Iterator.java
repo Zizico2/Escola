@@ -4,6 +4,7 @@ public interface Iterator<Element> {
 
     int DEFAULT_SIZE = 10;
     int GROWTH_RATE = 2;
+
     /**
      * Verifica se existe um elemento a seguir no vetor.
      *
