@@ -51,6 +51,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Cloud C = new CloudClass();
         executeCommand(input,C);
+        input.close();
 
     }
 
@@ -97,6 +98,7 @@ public class Main {
             } catch(IllegalArgumentException e){
                 System.out.println(Command.UNKNOWN.cmd);
             }
+            System.out.println();
         }
     }
 
