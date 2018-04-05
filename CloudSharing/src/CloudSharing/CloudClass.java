@@ -51,7 +51,7 @@ public class CloudClass implements Cloud {
             else if(!getUser(emailOwner).isPremium())
                 return UNAUTHORIZED_SHARING;
 
-            else if(hasFile(emailReceiver,fileName))
+            else if(isSharingSameFile(emailOwner,emailReceiver,fileName))
                 return SHARING_ALREADY_EXISTS;
 
             else if(!getUser(emailOwner).isPremium() && getFile(emailOwner,fileName).getSize()/2 >= getUser(emailReceiver).getStorage())
@@ -150,5 +150,11 @@ public class CloudClass implements Cloud {
         }
 
         return file;
+    }
+
+    private boolean isSharingSameFile(String emailOwner,String emailReceiver, String fileName){
+        if(hasFile(emailReceiver,fileName))
+                return getFile(emailReceiver, fileName).getOwner().equals(emailOwner);
+        return false;
     }
 }
