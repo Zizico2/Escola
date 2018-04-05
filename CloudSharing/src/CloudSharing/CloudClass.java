@@ -81,15 +81,16 @@ public class CloudClass implements Cloud {
     }
 
     @Override
-    public Iterator listFiles(String email) {
+    public Iterator<File> listFiles(String email) {
+      Iterator<File> files = null;
        if (hasUser(email))
-           return getUser(email).getFiles();
+           files = getUser(email).getFiles();
 
-           return null;
+           return files;
     }
 
     @Override
-    public Iterator listAll() {
+    public Iterator<User> listAll() {
         return users;
     }
 

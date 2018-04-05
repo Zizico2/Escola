@@ -4,7 +4,7 @@ import CloudSharing.*;
 
 public abstract class UserAbstract implements User {
 
-     boolean accountType;
+     private boolean accountType;
      Iterator<File> files;
      String email;
      int memoryStorage;
@@ -34,7 +34,7 @@ public abstract class UserAbstract implements User {
     public abstract void upload(File file);
 
     @Override
-    public Iterator getFiles(){
+    public Iterator<File> getFiles(){
         return files;
     }
 

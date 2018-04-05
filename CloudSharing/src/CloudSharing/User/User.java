@@ -14,7 +14,7 @@ public interface User {
 
     void upload(File file);
 
-    Iterator getFiles();
+    Iterator<File> getFiles();
 
     boolean isPremium();
 }

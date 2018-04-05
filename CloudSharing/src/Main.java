@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import CloudSharing.*;
+import CloudSharing.User.User;
 
 public class Main {
 
@@ -9,6 +10,7 @@ public class Main {
 
     private enum Message{
 
+        NO_ACCOUNTS ("No accounts."),
         ACCOUNT_ADDED ("Account was added."),
         INVALID_ACCOUNT ("Account already exists."),
         FILE_UPLOADED ("File uploaded into account."),
@@ -18,11 +20,11 @@ public class Main {
         FILE_SHARED ("File was shared."),
         FILE_NOT_EXIST ("File does not exist."),
         UNAUTHORIZED_SHARING ("Account does not allow file sharing."),
-        SHARING_ALREADY_EXISTS ("File already shared.");
+        SHARING_ALREADY_EXISTS ("File already shared."),
 
 
 
-
+        EXITING ("Exiting...");
 
         private final String msg;
         Message(String msg){
@@ -56,7 +58,7 @@ public class Main {
         String cmd = "";
 
         while(!cmd.equals(Command.EXIT.cmd)){
-            cmd = in.next().toUpperCase();
+            cmd = in.next().toUpperCase().trim();
             try {
                 Command command = Command.valueOf(cmd);
                 switch(command){
@@ -73,15 +75,19 @@ public class Main {
                         break;
 
                     case MINSPACE:
+                        minSpace(Cloud);
                         break;
 
                     case LISTFILES:
+                        listFiles(in, Cloud);
                         break;
 
                     case LISTALL:
+                        listAll(Cloud);
                         break;
 
                     case EXIT:
+                        System.out.println(Message.EXITING.msg);
                         break;
 
                     case UNKNOWN:
@@ -169,5 +175,57 @@ public class Main {
                 default:
                     System.out.println("ERROR");
             }
+    }
+
+    private static void minSpace(Cloud cloud){
+        User user = cloud.minSpace();
+
+        if(user == null)
+            System.out.println(Message.NO_ACCOUNTS.msg);
+
+        else
+            System.out.println("Account with least free space: " + user.getID());
+    }
+
+    private static void listFiles(Scanner in, Cloud cloud){
+        String email = in.nextLine().trim();
+        Iterator<File> files = cloud.listFiles(email);
+
+        if(files == null)
+            System.out.println(Message.ACCOUNT_NOT_EXIST.msg);
+
+        else {
+            files.initialize();
+            while(files.hasNext()){
+
+                File file = files.next();
+                System.out.println("Account files:");
+                String shared = "";
+
+                if(file.getOwner().equals(email))
+                    shared = " (shared)";
+
+                System.out.println(file.getName() + " (" + file.getSize() + " MB)" + shared);
+            }
+        }
+    }
+
+    private static void listAll(Cloud cloud){
+        Iterator<User> users = cloud.listAll();
+        users.initialize();
+        System.out.println("All accounts:");
+
+        while(users.hasNext()){
+
+            User user = users.next();
+            String type;
+
+            if(user.isPremium())
+                type = PREMIUM;
+            else
+                type = BASIC;
+
+            System.out.println(user.getID() + " (" + type + ")" );
+        }
     }
 }

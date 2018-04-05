@@ -62,12 +62,12 @@ public interface Cloud {
      * @param email - Identificador da conta.
      * @return - Objeto: Interface Iterator, Class getFiles.
      */
-    Iterator listFiles(String email);
+    Iterator<File> listFiles(String email);
 
     /**
      * Retorna todas as contas.
      *
      * @return - Objeto: Interface Iterator, Class Users.
      */
-    Iterator listAll();
+    Iterator<User> listAll();
 }
